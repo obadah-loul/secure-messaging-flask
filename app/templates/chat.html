@@ -1,0 +1,107 @@
+{% extends "base.html" %}
+
+{% block title %}Secure Chat{% endblock %}
+
+{% block content %}
+
+<h2>Secure Chat</h2>
+
+<p>
+    Signed in as
+    <strong>{{ current_user.email }}</strong>
+</p>
+
+<hr>
+
+<h3>Send Encrypted Message</h3>
+
+<form method="POST">
+
+    <input
+        type="hidden"
+        name="csrf_token"
+        value="{{ csrf_token() }}"
+    >
+
+    <label>Recipient Email</label>
+
+    <input
+        type="email"
+        name="recipient"
+        placeholder="bob@example.com"
+        required
+    >
+
+    <br><br>
+
+    <label>Message</label>
+
+    <textarea
+        name="message"
+        rows="5"
+        maxlength="2000"
+        placeholder="Write a secure message..."
+        required
+    ></textarea>
+
+    <br><br>
+
+    <button type="submit">
+        Send Encrypted Message
+    </button>
+
+</form>
+
+<hr>
+
+<h3>Encrypted Inbox</h3>
+
+{% if inbox %}
+
+    {% for item in inbox %}
+
+        <div class="message-card">
+
+            <p>
+                <strong>From:</strong>
+                {{ item.sender }}
+            </p>
+
+            <p>
+                {{ item.message }}
+            </p>
+
+            <p class="message-time">
+                {{ item.created_at }}
+            </p>
+
+        </div>
+
+    {% endfor %}
+
+{% else %}
+
+    <p>No messages received yet.</p>
+
+{% endif %}
+
+<hr>
+
+<form
+    method="POST"
+    action="{{ url_for('auth.logout') }}"
+>
+
+    <input
+        type="hidden"
+        name="csrf_token"
+        value="{{ csrf_token() }}"
+    >
+
+    <button type="submit">
+        Logout
+    </button>
+
+</form>
+
+{% endblock %}

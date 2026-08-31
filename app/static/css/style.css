@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f6f8;
+    color: #1f2937;
+}
+
+.page-container {
+    width: 92%;
+    max-width: 1000px;
+    margin: 40px auto;
+}
+
+.site-header {
+    background: #172033;
+    color: white;
+    padding: 28px 32px;
+    border-radius: 12px 12px 0 0;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.site-header p {
+    margin: 8px 0 0;
+    color: #cbd5e1;
+}
+
+.content-card {
+    background: white;
+    padding: 32px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+h3 {
+    margin-top: 28px;
+}
+
+label {
+    font-weight: 600;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 11px 12px;
+    margin-top: 6px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    background: #172033;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 11px 18px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #e5e7eb;
+    margin: 28px 0;
+}
+
+.message-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 18px;
+    margin-bottom: 14px;
+}
+
+.message-card p {
+    margin: 6px 0;
+}
+
+.message-time {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.flash-container {
+    margin-bottom: 15px;
+}
+
+.flash {
+    padding: 12px 16px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+.flash.success {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+}
+
+.flash.danger {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+}
+
+.flash.warning {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+}
+
+footer {
+    text-align: center;
+    margin-top: 18px;
+    font-size: 12px;
+    color: #64748b;
+}
+
+@media (max-width: 700px) {
+
+    .page-container {
+        width: 96%;
+        margin: 15px auto;
+    }
+
+    .site-header,
+    .content-card {
+        padding: 22px;
+    }
+}

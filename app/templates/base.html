@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{% block title %}Secure Messaging{% endblock %}</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <header class="site-header">
+            <div>
+                <h1>Secure Messaging</h1>
+                <p>Hybrid encrypted communication using AES-256-GCM and RSA-OAEP</p>
+            </div>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-container">
+
+                    {% for category, message in messages %}
+                        <div class="flash {{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <main class="content-card">
+
+            {% block content %}
+            {% endblock %}
+
+        </main>
+
+        <footer>
+            Local secure software engineering lab
+        </footer>
+
+    </div>
+
+</body>
+</html>

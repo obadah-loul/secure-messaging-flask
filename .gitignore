@@ -1,0 +1,28 @@
+# Environment secrets
+.env
+
+# Python virtual environment
+venv/
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+
+# Flask / SQLite
+instance/
+*.db
+*.sqlite
+*.sqlite3
+
+# Security scan output
+bandit_report.json
+
+# IDE / OS files
+.vscode/
+.idea/
+.DS_Store
+
+# Temporary files
+*.log
